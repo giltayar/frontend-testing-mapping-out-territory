@@ -14,21 +14,23 @@ describe('todo actions', () => {
   });
 
   it('should toggle test correctly', () => {
-    /**
-     * Add the following test
-     *
-     * 1. Toggling the "completed" button strikes out the todo
-     * 2. Toggling it again will undo the strike out
-     */
-    throw new Error('test fails because you need to implement it!');
+    cy.get('.new-todo').type('Clean room{enter}');
+
+    cy.get('.todo-list li:nth-child(1) .toggle').click();
+    cy.get('.todo-list li:nth-child(1) label').should('have.css', 'text-decoration-line', 'line-through');
+
+    cy.get('.todo-list li:nth-child(1) .toggle').click();
+    cy.get('.todo-list li:nth-child(1) label').should('not.have.css', 'text-decoration-line', 'line-through');
   });
 
   it('should clear completed', () => {
-    /**
-     * Add the following test
-     *
-     * 1. The "Clear completed" button in the bottom should clear out all completed todos
-     */
-    throw new Error('test fails because you need to implement it!');
+    cy.get('.new-todo').type('Clean room{enter}');
+    cy.get('.new-todo').type('Learn Jiu Jitsu{enter}');
+
+    cy.get('.todo-list li:nth-child(1) .toggle').click();
+
+    cy.contains('Clear completed').click();
+
+    cy.get('.todo-list li').should('have.length', 1);
   });
 });

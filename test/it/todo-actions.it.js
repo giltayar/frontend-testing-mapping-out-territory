@@ -33,25 +33,24 @@ describe('todo-actions it', function() {
   });
 
   it('should toggle test correctly', () => {
-    /**
-     * Add the following test
-     *
-     * 1. Toggling the "completed" button strikes out the todo
-     *    (there's no way to check for css styles, but you _can_ check that the `li` has the right class)
-     * 2. Toggling it again will undo the strike out
-     *
-     * Note: To click on an element, use _element_.click()
-     */
-    throw new Error('test fails because you need to implement it!');
+    addNewTodo('Clean room');
+
+    $('.todo-list li:nth-child(1) .toggle').click();
+    expect($('.todo-list li:nth-child(1)')).to.have.class('completed');
+
+    $('.todo-list li:nth-child(1) .toggle').click();
+    expect($('.todo-list li:nth-child(1)')).to.not.have.class('completed');
   });
 
   it('should clear completed', () => {
-    /**
-     * Add the following test
-     *
-     * 1. The "Clear completed" button in the bottom should clear out all completed todos
-     */
-    throw new Error('test fails because you need to implement it!');
+    addNewTodo('Clean room{enter}');
+    addNewTodo('Learn Jiu Jitsu{enter}');
+
+    $('.todo-list li:nth-child(1) .toggle').click();
+
+    $('.clear-completed').click();
+
+    expect($('.todo-list li')).to.have.length(1);
   });
 });
 

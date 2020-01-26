@@ -1,5 +1,5 @@
 {
-  "name": "mapping-out-territory",
+  "name": "frontend-testing-mapping-out-territory",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -9,14 +9,27 @@
   },
   "scripts": {
     "start": "serve -l 3000 src",
-    "test": "npm run eslint",
-    "eslint": "eslint 'src/**/*.js' 'test/**/*.js' 'test-sample-solution/**/*.js' 'tutorial-snippets/**/*.js'"
+    "test": "npm run eslint && npm run mocha && start-test 3000 cypress:run",
+    "eslint": "eslint 'src/**/*.js' 'test/**/*.js'",
+    "cypress:run": "cypress run --config integrationFolder=test",
+    "cypress:open": "cypress open --config integrationFolder=test",
+    "mocha": " mocha -r esm 'test/it/*.js' 'test-sample-solution/unit/*.js'"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.18.2",
-    "serve": "^11.2.0"
+    "@applitools/eyes-cypress": "^3.9.5",
+    "chai": "^4.2.0",
+    "chai-dom": "^1.8.1",
+    "chai-jquery": "^2.1.0",
+    "cypress": "^3.8.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "esm": "^3.2.25",
+    "jquery-lite": "^2.2.3",
+    "jsdom": "^16.0.1",
+    "mocha": "^7.0.1",
+    "prettier": "^1.19.1",
+    "serve": "^11.3.0",
+    "start-server-and-test": "^1.10.7"
   }
 }
