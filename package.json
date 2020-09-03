@@ -17,19 +17,19 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@applitools/eyes-cypress": "^3.9.5",
+    "@applitools/eyes-cypress": "^3.13.4",
     "chai": "^4.2.0",
-    "chai-dom": "^1.8.1",
+    "chai-dom": "^1.8.2",
     "chai-jquery": "^2.1.0",
-    "cypress": "^3.8.3",
-    "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "cypress": "^5.1.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "esm": "^3.2.25",
     "jquery-lite": "^2.2.3",
-    "jsdom": "^16.0.1",
-    "mocha": "^7.0.1",
-    "prettier": "^1.19.1",
-    "serve": "^11.3.0",
-    "start-server-and-test": "^1.10.7"
+    "jsdom": "^16.4.0",
+    "mocha": "^8.1.3",
+    "prettier": "^2.1.1",
+    "serve": "^11.3.2",
+    "start-server-and-test": "^1.11.3"
   }
 }
